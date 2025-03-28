@@ -1,0 +1,26 @@
+services:
+  servidor:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: tcp_server
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "sh", "-c", "nc -z localhost 5000"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  cliente:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: tcp_client
+    entrypoint: ["python", "-m", "app.client_app.run_client"]
+    stdin_open: true
+    tty: true
+    depends_on:
+      servidor:
+        condition: service_healthy
