@@ -139,6 +139,16 @@ pytest tests/
 
 ---
 
+## ✨ Pruebas de Funcionamiento
+
+Servidor: 
+![image](https://github.com/user-attachments/assets/a548f19c-74e1-4a8c-aafd-f312fbe6e25a)
+
+Tests manuales:  (make test)
+![image](https://github.com/user-attachments/assets/95dc93c4-319c-4b49-97df-cf1b107665f4)
+
+
+
 ## ✨ Extensiones Futuras Sugeridas
 
 - Comandos personalizados (PING, STATS, LOGIN, etc.)
